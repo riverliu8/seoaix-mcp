@@ -6,13 +6,15 @@ A remote [Model Context Protocol](https://modelcontextprotocol.io) server that l
 
 - **Endpoint:** `https://inxy.ai/api/mcp` (Streamable HTTP)
 - **Docs / setup:** https://inxy.ai/mcp
-- **Tools:** `ai_search_diagnostic(url)` · `full_seo_audit(url)` · `get_my_store_audit()`
+- **Tools:** `ai_search_diagnostic(url)` · `full_seo_audit(url)` · `email_seo_report(audit_id, email[, weekly])` · `subscribe_to_inxy([email, store_url])` · `get_my_store_audit()`
 
 ## What the tools do
 
 - **`ai_search_diagnostic(url)`** — audit ANY URL for AI-search readiness only (AEO/GEO/LLMO): how likely ChatGPT, Claude, Perplexity & Google AI are to cite it. ~7 AI-citation signals (FAQ/structured-data/entity schema, citable stats, llms.txt, author/E-E-A-T, OG).
 - **`full_seo_audit(url)`** — crawl-audit ANY URL across the whole SEO surface: the AI-search signals **plus** on-page SEO (title, meta, headings, content), technical SEO (HTTPS, robots.txt, XML sitemap, canonical, mobile), and — for Shopify stores — product/offer/review/breadcrumb schema + image-alt coverage.
 - **`get_my_store_audit()`** — the API-key owner's OWN connected Shopify store: the deep 12-category report Inxy runs inside the app using the store's real catalog, performance and analytics (far beyond crawling a URL). No `url` argument; requires an API key + a connected store.
+- **`email_seo_report(audit_id, email[, weekly])`** — email the full written report for an audit this session already ran (`audit_id` comes back with every audit result). Pass `weekly: true` — only when the user asks — to subscribe the site to a weekly re-audit digest that tracks the score change ("61 → 64 this week, FAQ schema now passes"), with a one-click unsubscribe in every email. Only use an email the user explicitly provided.
+- **`subscribe_to_inxy(...)`** — plan summary plus a personalised signup link for Inxy's autopilot SEO (plans from $19/mo, free trial). Optionally records the user's email/store URL — only if explicitly given — so the team can help with onboarding. Payment and store connection complete in the browser.
 
 The first two return a **weighted 0–100 score** plus the top issues to fix:
 
@@ -72,3 +74,7 @@ curl -s https://inxy.ai/api/mcp \
 ---
 
 _This repo holds the public MCP manifest (`server.json`) for registry discovery (modelcontextprotocol registry, Smithery, Glama, PulseMCP, mcp.so). The server itself is hosted by Inxy at the endpoint above._
+
+## License
+
+MIT — see [LICENSE](LICENSE).
