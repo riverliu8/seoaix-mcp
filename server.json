@@ -1,17 +1,18 @@
 {
-  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-07-09/server.schema.json",
-  "name": "ai.inxy/seo-audit",
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.seoaix/seo-audit",
+  "title": "SeoAiX SEO Audit",
   "description": "Free SEO & AI-search (AEO) audits for any site or Shopify store, with emailed weekly score reports.",
-  "version": "1.4.0",
-  "websiteUrl": "https://inxy.ai/mcp",
   "repository": {
-    "url": "https://github.com/riverliu8/inxy-mcp",
+    "url": "https://github.com/riverliu8/seoaix-mcp",
     "source": "github"
   },
+  "version": "1.5.0",
   "remotes": [
     {
       "type": "streamable-http",
-      "url": "https://inxy.ai/api/mcp"
+      "url": "https://seoaix.com/api/mcp"
     }
-  ]
+  ],
+  "websiteUrl": "https://seoaix.com/mcp"
 }
